@@ -1,11 +1,12 @@
 import com.sun.jdi.connect.Connector.StringArgument
 
 fun main(args: Array<String>) {
-    print("Выберите номер задания для запуска (всего заданий 6 (1-6)): ")
-    var inputTask = readln()
-    var taskNum = inputTask.toInt()
+
     var exitProgram = true
     do {
+        print("Выберите номер задания для запуска (всего заданий 6 (1-6)): ")
+        var inputTask = readln()
+        var taskNum = inputTask.toInt()
         when (taskNum){
             1 -> taskNum1()
             2 -> taskNum2()
@@ -13,6 +14,7 @@ fun main(args: Array<String>) {
             4 -> taskNum4()
             5 -> taskNum5()
             6 -> taskNum6()
+            else -> break
         }
         println("Хотите завершить работу программы?")
         var inputExit = readln()
@@ -65,22 +67,30 @@ fun taskNum3(){
     println("Число $inputNum в двоичной системе: ${result.toString(2)}")
 }
 
-fun taskNum4(){
-    print("Введите для числа и символ операции через один пробел (символами могут быть /, *, +, -) ")
-    val inputNumNumChar = readln()
-    for (i in 0 .. inputNumNumChar.length){
-        if (inputNumNumChar[i]==' '){
-
-        }
+fun taskNum4() {
+    print("Введите для числа и символ операции через один пробел (символами могут быть /, *, +, -): ")
+    val inputNumNumChar = readln().split(" ")
+    val num1 = inputNumNumChar[0].toDouble()
+    val num2 = inputNumNumChar[1].toDouble()
+    val char1 = inputNumNumChar[2].toString()
+    when (char1) {
+        "+" -> println("Ответ: " + (num1+num2))
+        "-" -> println("Ответ: " + (num1-num2))
+        "*" -> println("Ответ: " + (num1*num2))
+        "/" -> println("Ответ: " + (num1/num2))
     }
-    val num1 = inputNumNumChar[0]
-    val num2 = inputNumNumChar[1]
-    val char1 = inputNumNumChar[2]
-    println("Первое число: $num1 Второе число: $num2 Символ между ними: $char1")
 }
 
 fun taskNum5(){
-
+    println("Введите целое число и основание степени")
+    print("Введите целое число: ")
+    val intNum = readln().toInt()
+    print("Введите основание степени: ")
+    val degreeBaseNum = readln()
+    for (i in 1 .. intNum){
+        var degreeNum = '0'
+        var count = i
+    }
 }
 
 fun taskNum6(){
