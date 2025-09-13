@@ -90,6 +90,7 @@ fun taskNum5(){
     for (i in 1 .. intNum){
         var degreeNum = '0'
         var count = i
+        ""
     }
 }
 
