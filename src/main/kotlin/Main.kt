@@ -83,17 +83,51 @@ fun taskNum4() {
 
 fun taskNum5(){
     println("Введите целое число и основание степени")
-    print("Введите целое число: ")
-    val intNum = readln().toInt()
+    print("Введите целое число n: ")
+    var intNum = readln().toInt()
     print("Введите основание степени: ")
-    val degreeBaseNum = readln()
-    for (i in 1 .. intNum){
-        var degreeNum = '0'
-        var count = i
-        ""
+    var degreeBaseNum = readln().toInt()
+    var degreeNum = 0
+    var degreeResult = 1
+    var isDegreeFound = false
+
+    while (degreeResult <= intNum){
+        if (degreeResult ==intNum){
+            isDegreeFound = true
+            break
+        }
+        degreeNum+=1
+        degreeResult *= degreeBaseNum
     }
+    if (isDegreeFound==true)
+        println("Показатель степени: $degreeNum")
+    else
+        println("Целочисленный показатель степени не существует")
 }
 
 fun taskNum6(){
+    print("Введите первую цифру: ")
+    var Num1 = readln().toInt()
+    print("Введите вторую цифру: ")
+    var Num2 = readln().toInt()
 
-}
+    var OddNum: Int?=0
+
+    while (Num1 or Num2<10){
+
+
+        if (Num1 % 2 == 1)
+            OddNum = Num2 * 10 + Num1
+        else if (Num2 % 2 == 1)
+            OddNum = Num1 * 10 + Num2
+        if (OddNum != 0)
+            println("Нечётное число: $OddNum")
+        else
+            println("Создать нечётное число невозможно.")
+
+        break
+
+    }
+    if (Num1 or Num2>=10)
+        println("Неправильный ввод цифр.")
+    }
