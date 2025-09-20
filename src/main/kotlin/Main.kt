@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
         else {
             println("----------------------------------------")
         }
-    } while (exitProgram == true)
+    } while (exitProgram)
 }
 fun taskNum1() {
     print("Введите набор из латинских букв: ")
@@ -72,7 +72,7 @@ fun taskNum4() {
     val inputNumNumChar = readln().split(" ")
     val num1 = inputNumNumChar[0].toDouble()
     val num2 = inputNumNumChar[1].toDouble()
-    val char1 = inputNumNumChar[2].toString()
+    val char1 = inputNumNumChar[2]
     when (char1) {
         "+" -> println("Ответ: " + (num1+num2))
         "-" -> println("Ответ: " + (num1-num2))
@@ -99,7 +99,7 @@ fun taskNum5(){
         degreeNum+=1
         degreeResult *= degreeBaseNum
     }
-    if (isDegreeFound==true)
+    if (isDegreeFound)
         println("Показатель степени y: $degreeNum")
     else
         println("Целочисленный показатель степени не существует")
