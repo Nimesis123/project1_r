@@ -68,7 +68,7 @@ fun taskNum3(){
 }
 
 fun taskNum4() {
-    print("Введите для числа и символ операции через один пробел (символами могут быть /, *, +, -): ")
+    print("Введите два числа и символ операции через один пробел (символами могут быть /, *, +, -): ")
     val inputNumNumChar = readln().split(" ")
     val num1 = inputNumNumChar[0].toDouble()
     val num2 = inputNumNumChar[1].toDouble()
@@ -85,7 +85,7 @@ fun taskNum5(){
     println("Введите целое число и основание степени")
     print("Введите целое число n: ")
     var intNum = readln().toInt()
-    print("Введите основание степени: ")
+    print("Введите основание степени x: ")
     var degreeBaseNum = readln().toInt()
     var degreeNum = 0
     var degreeResult = 1
@@ -100,7 +100,7 @@ fun taskNum5(){
         degreeResult *= degreeBaseNum
     }
     if (isDegreeFound==true)
-        println("Показатель степени: $degreeNum")
+        println("Показатель степени y: $degreeNum")
     else
         println("Целочисленный показатель степени не существует")
 }
@@ -110,12 +110,8 @@ fun taskNum6(){
     var Num1 = readln().toInt()
     print("Введите вторую цифру: ")
     var Num2 = readln().toInt()
-
-    var OddNum: Int?=0
-
+    var OddNum = 0
     while (Num1 or Num2<10){
-
-
         if (Num1 % 2 == 1)
             OddNum = Num2 * 10 + Num1
         else if (Num2 % 2 == 1)
@@ -124,9 +120,7 @@ fun taskNum6(){
             println("Нечётное число: $OddNum")
         else
             println("Создать нечётное число невозможно.")
-
         break
-
     }
     if (Num1 or Num2>=10)
         println("Неправильный ввод цифр.")
